@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportVision | Viva o Esporte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">SV</span>
+            <div>
+                <h2>SPORT<span>VISION</span></h2>
+                <small>VIVA O ESPORTE.</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-page="inicio">⌂ Início</button>
+            <button class="nav-btn" data-page="explorar">◎ Explorar</button>
+            <button class="nav-btn" data-page="favoritos">♡ Favoritos</button>
+            <button class="nav-btn" data-page="historico">◷ Histórico</button>
+        </nav>
+
+        <h4>MODALIDADES</h4>
+        <nav>
+            <button class="nav-btn sport-btn" data-sport="Futebol">⚽ Futebol</button>
+            <button class="nav-btn sport-btn" data-sport="Basquete">🏀 Basquete</button>
+            <button class="nav-btn sport-btn" data-sport="Vôlei">🏐 Vôlei</button>
+            <button class="nav-btn sport-btn" data-sport="Tênis">🎾 Tênis</button>
+            <button class="nav-btn sport-btn" data-sport="Corrida">🏃 Outros esportes</button>
+        </nav>
+
+        <div class="sidebar-message">
+            <h3>GRANDES JOGADAS<br>COMEÇAM AQUI!</h3>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button id="mobile-menu" aria-label="Abrir menu">☰</button>
+            <input type="search" id="search"
+                placeholder="⌕ Buscar vídeos, atletas, times ou modalidades...">
+            <button id="profile" title="Perfil">♙</button>
+        </header>
+
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <span class="highlight">EM DESTAQUE</span>
+                <h1>OS MELHORES<br>MOMENTOS DO<br>
+                    <span>ESPORTE MUNDIAL</span>
+                </h1>
+                <p>Gols, jogadas incríveis e os maiores momentos<br>
+                    dos esportes que movimentam o mundo.</p>
+                <button class="primary-btn" id="watch-featured">
+                    ▶ ASSISTIR AGORA
+                </button>
+            </div>
+        </section>
+
+        <section class="section" id="categories-section">
+            <div class="section-heading">
+                <h2>Categorias em destaque</h2>
+                <button class="see-all" id="all-categories">Ver todas →</button>
+            </div>
+
+            <div class="categories">
+                <button class="category-card" data-sport="Futebol">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=80" alt="Futebol">
+                    <span>⚽ Futebol <b>↗</b></span>
+                </button>
+                <button class="category-card" data-sport="Basquete">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=500&q=80" alt="Basquete">
+                    <span>🏀 Basquete <b>↗</b></span>
+                </button>
+                <button class="category-card" data-sport="Vôlei">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=500&q=80" alt="Vôlei">
+                    <span>🏐 Vôlei <b>↗</b></span>
+                </button>
+                <button class="category-card" data-sport="Tênis">
+                    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=500&q=80" alt="Tênis">
+                    <span>🎾 Tênis <b>↗</b></span>
+                </button>
+                <button class="category-card" data-sport="Corrida">
+                    <img src="https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?auto=format&fit=crop&w=500&q=80" alt="Corrida">
+                    <span>🏃 Corrida <b>↗</b></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2 id="videos-title">Vídeos em alta</h2>
+                <span class="video-count" id="video-count"></span>
+            </div>
+            <div class="video-grid" id="video-grid"></div>
+            <p class="empty-message" id="empty-message" hidden>
+                Nenhum vídeo encontrado.
+            </p>
+        </section>
+
+        <section class="promo-banner">
+            <span class="trophy">🏆</span>
+            <h3>DESTAQUES <span>ESPORTIVOS</span></h3>
+            <p>Recordes, jogadas históricas e momentos que marcaram o esporte.</p>
+            <button id="see-highlights">VER AGORA →</button>
+        </section>
+
+        <footer>
+            <p>© 2026 SportVision — Viva o esporte.</p>
+            <p>Feito para quem vive cada jogada.</p>
+        </footer>
+    </main>
+
+    <dialog id="video-dialog">
+        <div class="dialog-header">
+            <h2 id="dialog-title">Assistir vídeo</h2>
+            <button id="close-dialog" aria-label="Fechar">✕</button>
+        </div>
+        <div id="player-container"></div>
+        <p id="dialog-description"></p>
+        <a id="youtube-link" href="#" target="_blank" rel="noopener">
+            Assistir no YouTube ↗
+        </a>
+    </dialog>
+
+    <dialog id="profile-dialog">
+        <div class="dialog-header">
+            <h2>Seu perfil</h2>
+            <button id="close-profile" aria-label="Fechar">✕</button>
+        </div>
+        <p>Bem-vindo ao SportVision!</p>
+        <p>Seus favoritos e seu histórico ficam salvos neste navegador.</p>
+        <button id="clear-history" class="secondary-btn">Limpar histórico</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
